@@ -26,4 +26,19 @@ public class ProducerCurve
 		super();
 		this.curvePoints = curvePoints;
 	}
+	
+	/**
+	 * Replace the specified point at the array index
+	 * If the index passed is larger than the array length,
+	 * it will not set the point
+	 * @param point the Point to set
+	 * @param index the index of the array
+	 */
+	public void setPoint(Point point, int index) 
+	{
+		if (index < this.curvePoints.length)
+		{
+			this.curvePoints[index] = point;
+		}	
+	}
 }
