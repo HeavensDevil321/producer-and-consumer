@@ -41,4 +41,19 @@ public class ProducerCurve
 			this.curvePoints[index] = point;
 		}	
 	}
+	
+	/**
+	 * Check if array is empty 
+	 */
+	public boolean isEmpty()
+	{
+		for(int x = 0; x < this.curvePoints.length; x++)
+		{
+			if (this.curvePoints[x] != null)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
 }
