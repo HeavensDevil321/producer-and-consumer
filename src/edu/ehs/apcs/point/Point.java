@@ -71,15 +71,12 @@ public class Point
 		return true;
 	}
 
-
 	/**
-	 * makes the coordinate as a string to be written
-	 * out like this: (#,#)
+	 * Writes coordinate pair as a string. (#,#)
 	 */
-	public String toString()
-	{
-		String coordinate = "("+ this.quantity+ ","+ this.price+ ")";
-		
-		return coordinate;
+	@Override
+	public String toString() {
+		return "(" + this.quantity + ", " + this.price + ")";
 	}
+	
 }
