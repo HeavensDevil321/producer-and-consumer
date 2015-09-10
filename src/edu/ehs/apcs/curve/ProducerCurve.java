@@ -5,6 +5,7 @@ import edu.ehs.apcs.point.Point;
 public class ProducerCurve 
 {
 	private Point[] curvePoints;
+	
 	private static final int DEFAULT_ARRAY_SIZE = 10;
 	
 	/**
@@ -51,7 +52,6 @@ public class ProducerCurve
 			{
 				Point[] oldCurve = copyCurve(this.curvePoints);
 				Point[] newCurve = new Point[index + 1];
-				
 				
 			}
 		}
@@ -103,6 +103,7 @@ public class ProducerCurve
 		return newCurve;
 	}
 	
+	
 	/**
 	 * Appends a single point to the end of the curve
 	 * @param point
@@ -124,6 +125,22 @@ public class ProducerCurve
 	{
 		Point[] copy = curve;
 		return copy;
+	}
+	
+	public Point[] deletePointAtBeginningOfCurve(Point point)
+	{
+		Point[] newCurve = new Point[this.curvePoints.length - 1];
+		// go over this with bro
+		// and ask about search point
+		
+		for(int x = 0; x < newCurve.length; x++)
+		{
+			if (!(this.curvePoints[x] == this.curvePoints[x]))
+			{
+				newCurve[x] = this.curvePoints[x - 1];
+			}
+		}
+		return newCurve;
 	}
 	
 	/**
@@ -150,15 +167,18 @@ public class ProducerCurve
 		{
 			return true;
 		}
-		
-		for(int x = 0; x < this.curvePoints.length; x++)
+		else
 		{
-			if (this.curvePoints[x] != null)
+			for(int x = 0; x < this.curvePoints.length; x++)
 			{
-				return false;
+				if (this.curvePoints[x] != null)
+				{
+					return false;
+				}
 			}
 		}
-		
 		return true;
 	}
+	
+	
 }
