@@ -130,15 +130,43 @@ public class ProducerCurve
 	public Point[] deletePointAtBeginningOfCurve(Point point)
 	{
 		Point[] newCurve = new Point[this.curvePoints.length - 1];
-		// go over this with bro
-		// and ask about search point
 		
 		for(int x = 0; x < newCurve.length; x++)
 		{
-			if (!(this.curvePoints[x] == this.curvePoints[x]))
+			newCurve[x] = this.curvePoints[x = 1];
+		}
+		return newCurve;
+	}
+	
+	public Point[] deletePointAtMiddleOfCurve(int index)
+	{
+		Point[] newCurve = new Point[this.curvePoints.length-1];
+		
+		for(int x = 0; x < newCurve.length; x++)
+		{			
+			if(x != index)
 			{
-				newCurve[x] = this.curvePoints[x - 1];
-			}
+				if(x < index)
+				{
+					newCurve[x] = this.curvePoints[x];
+				}
+				
+				if(x > index)
+				{
+					newCurve[x - 1] = this.curvePoints[x];
+				}
+			}				
+		}
+		return newCurve;
+	}
+	
+	public Point[] deletePointAtEndOfCurve(Point point)
+	{
+		Point[] newCurve = new Point[this.curvePoints.length - 1];
+		
+		for(int x = 0; x < newCurve.length; x++)
+		{
+			newCurve[x] = this.curvePoints[x];
 		}
 		return newCurve;
 	}
