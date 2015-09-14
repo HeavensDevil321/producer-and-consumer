@@ -1,6 +1,3 @@
-/**
- * 
- */
 package edu.ehs.apcs.curve;
 
 import static org.junit.Assert.*;

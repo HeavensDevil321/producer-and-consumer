@@ -2,6 +2,8 @@ package edu.ehs.apcs.curve;
 
 import edu.ehs.apcs.point.Point;
 
+import java.util.ArrayList;
+
 /**
  * @author German G. Rivera
  * @date 8/26/2015
@@ -11,6 +13,7 @@ import edu.ehs.apcs.point.Point;
  */
 public class ConsumerCurve 
 {
+	private ArrayList<Point> curvePoint;
 	private Point conPoint[];
 	
 	public ConsumerCurve()
@@ -24,5 +27,6 @@ public class ConsumerCurve
 			System.out.println("hello" + conPoint[i]);
 		}
 	}
+	
 }
 //TODO get consumer working 

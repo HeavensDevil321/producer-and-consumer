@@ -6,6 +6,7 @@ public class ProducerCurve
 {
 	private Point[] curvePoints;
 	
+	// The default size of the ideal array
 	private static final int DEFAULT_ARRAY_SIZE = 10;
 	
 	/**
@@ -25,7 +26,7 @@ public class ProducerCurve
 	 */
 	public ProducerCurve(Point[] curvePoints) 
 	{
-		super();
+		super();// Inherits to parent class
 		this.curvePoints = curvePoints;
 	}
 	
@@ -57,6 +58,13 @@ public class ProducerCurve
 		}
 	}
 	
+	/**
+	 * Makes a new array curve that has one more index then the old curve
+	 * 
+	 * @param point
+	 * @param index
+	 * @return
+	 */
 	private Point[] addPoint(Point point, int index)
 	{
 		Point[] newCurve = null;
