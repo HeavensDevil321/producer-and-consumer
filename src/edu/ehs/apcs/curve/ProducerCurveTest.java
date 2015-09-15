@@ -1,12 +1,14 @@
 package edu.ehs.apcs.curve;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
+
+import edu.ehs.apcs.point.Point;
 
 /**
  * @author Gabriel
@@ -15,39 +17,12 @@ import org.junit.Test;
 public class ProducerCurveTest {
 
 	/**
-	 * @throws java.lang.Exception
-	 */
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
-	}
-
-	/**
 	 * Test method for {@link edu.ehs.apcs.curve.ProducerCurve#ProducerCurve()}.
 	 */
 	@Test
 	public final void testProducerCurve() {
-		fail("Not yet implemented"); // TODO
+		ProducerCurve myProducerCurve = new ProducerCurve();
+		assertNotNull("Object Created.", myProducerCurve);
 	}
 
 	/**
@@ -55,7 +30,11 @@ public class ProducerCurveTest {
 	 */
 	@Test
 	public final void testProducerCurvePointArray() {
-		fail("Not yet implemented"); // TODO
+		Point[] curvePoints = new Point[10];
+		ProducerCurve testProducerCurve = new ProducerCurve(curvePoints);
+		assertNotNull("ProducerCurve Created.", testProducerCurve);
+		// FIXME: potentially need to check the curvePoints variable is non-zero in ProdCurve
+		assertTrue("Size of array is non-zero", testProducerCurve.isEmpty()); 
 	}
 
 	/**
@@ -71,7 +50,10 @@ public class ProducerCurveTest {
 	 */
 	@Test
 	public final void testCopyCurve() {
-		fail("Not yet implemented"); // TODO
+		Point[] curve1 = new Point[10];
+		ProducerCurve pc1 = new ProducerCurve(curve1);
+		Point[] curve2 = pc1.copyCurve(curve1);
+		assertSame(curve1, curve2);
 	}
 
 	/**
@@ -103,7 +85,13 @@ public class ProducerCurveTest {
 	 */
 	@Test
 	public final void testSetPoint() {
-		fail("Not yet implemented"); // TODO
+		Point[] pointArray = new Point[10];
+		Point testPoint = new Point(1, 1.0);
+		ProducerCurve testProducerCurve = new ProducerCurve(pointArray);
+		testProducerCurve.setPoint(testPoint, 7);
+		
+		//assertTrue(testProducerCurve.getPoint(7).equals(testPoint));
+		assertSame(testPoint, testProducerCurve.getPoint(7));
 	}
 
 	/**
@@ -111,7 +99,13 @@ public class ProducerCurveTest {
 	 */
 	@Test
 	public final void testIsEmpty() {
-		fail("Not yet implemented"); // TODO
+		Point[] curvePoints = new Point[10];
+		ProducerCurve testProducerCurve = new ProducerCurve(curvePoints);
+		assertTrue("Curve is Empty.", testProducerCurve.isEmpty());
+		
+		Point testPoint = new Point(1, 1.0);
+		testProducerCurve.addPointToCurve(testPoint, 5);
+		assertFalse("Curve is not empty.", testProducerCurve.isEmpty());
 	}
 
 }
