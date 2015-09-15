@@ -1,5 +1,7 @@
 package edu.ehs.apcs.curve;
 
+import java.util.Arrays;
+
 import edu.ehs.apcs.point.Point;
 
 public class ProducerCurve 
@@ -60,7 +62,7 @@ public class ProducerCurve
 	
 	/**
 	 * Makes a new array curve that has one more index then the old curve
-	 * 
+	 * and move down the old point and the new point to the new curve.
 	 * @param point
 	 * @param index
 	 * @return
@@ -129,12 +131,23 @@ public class ProducerCurve
 		return newCurve;
 	}
 	
+	/**
+	 * Copies a array curve
+	 * @param curve sets curve as an array of points
+	 * @return
+	 */
 	public Point[] copyCurve(Point[] curve)
 	{
 		Point[] copy = curve;
 		return copy;
 	}
 	
+	/**
+	 * Makes a new array that has one less then then ignores the beginning point and 
+	 * copies down the rest of the old curve to the new
+	 * @param point
+	 * @return
+	 */
 	public Point[] deletePointAtBeginningOfCurve(Point point)
 	{
 		Point[] newCurve = new Point[this.curvePoints.length - 1];
@@ -146,6 +159,11 @@ public class ProducerCurve
 		return newCurve;
 	}
 	
+	/**
+	 * Makes a new array 
+	 * @param index
+	 * @return
+	 */
 	public Point[] deletePointAtMiddleOfCurve(int index)
 	{
 		Point[] newCurve = new Point[this.curvePoints.length-1];
@@ -215,6 +233,16 @@ public class ProducerCurve
 		}
 		return true;
 	}
+
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "ProducerCurve [curvePoints=" + Arrays.toString(curvePoints)
+				+ "]";
+	}
 	
+	 
 }

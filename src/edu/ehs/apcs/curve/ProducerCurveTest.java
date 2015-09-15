@@ -91,7 +91,8 @@ public class ProducerCurveTest {
 		testProducerCurve.setPoint(testPoint, 7);
 		
 		//assertTrue(testProducerCurve.getPoint(7).equals(testPoint));
-		assertSame(testPoint, testProducerCurve.getPoint(7));
+		//assertSame(testPoint, testProducerCurve.getPoint(7));
+		fail("not yet implemented.");
 	}
 
 	/**
@@ -108,4 +109,8 @@ public class ProducerCurveTest {
 		assertFalse("Curve is not empty.", testProducerCurve.isEmpty());
 	}
 
+	public final void testToString()
+	{
+		fail("not yet inputted.");
+	}
 }
