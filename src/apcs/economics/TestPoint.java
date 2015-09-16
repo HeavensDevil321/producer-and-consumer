@@ -1,4 +1,5 @@
-package edu.ehs.apcs.point;
+package apcs.economics;
+
 
 /**
  * @author German Rivera

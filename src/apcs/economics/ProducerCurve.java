@@ -1,8 +1,6 @@
-package edu.ehs.apcs.curve;
+package apcs.economics;
 
 import java.util.Arrays;
-
-import edu.ehs.apcs.point.Point;
 
 public class ProducerCurve 
 {
@@ -239,7 +237,8 @@ public class ProducerCurve
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "ProducerCurve [curvePoints=" + Arrays.toString(curvePoints)
 				+ "]";
 	}

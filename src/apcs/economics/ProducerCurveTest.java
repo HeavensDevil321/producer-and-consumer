@@ -1,14 +1,14 @@
-package edu.ehs.apcs.curve;
+package apcs.economics;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
-
-import edu.ehs.apcs.point.Point;
 
 /**
  * @author Gabriel
@@ -17,7 +17,7 @@ import edu.ehs.apcs.point.Point;
 public class ProducerCurveTest {
 
 	/**
-	 * Test method for {@link edu.ehs.apcs.curve.ProducerCurve#ProducerCurve()}.
+	 * Test method for {@link apcs.economics.ProducerCurve#ProducerCurve()}.
 	 */
 	@Test
 	public final void testProducerCurve() {
@@ -26,7 +26,7 @@ public class ProducerCurveTest {
 	}
 
 	/**
-	 * Test method for {@link edu.ehs.apcs.curve.ProducerCurve#ProducerCurve(edu.ehs.apcs.point.Point[])}.
+	 * Test method for {@link apcs.economics.ProducerCurve#ProducerCurve(apcs.economics.Point[])}.
 	 */
 	@Test
 	public final void testProducerCurvePointArray() {
@@ -38,7 +38,7 @@ public class ProducerCurveTest {
 	}
 
 	/**
-	 * Test method for {@link edu.ehs.apcs.curve.ProducerCurve#addPointToCurve(edu.ehs.apcs.point.Point, int)}.
+	 * Test method for {@link apcs.economics.ProducerCurve#addPointToCurve(apcs.economics.Point, int)}.
 	 */
 	@Test
 	public final void testAddPointToCurve() {
@@ -46,18 +46,18 @@ public class ProducerCurveTest {
 	}
 
 	/**
-	 * Test method for {@link edu.ehs.apcs.curve.ProducerCurve#copyCurve(edu.ehs.apcs.point.Point[])}.
+	 * Test method for {@link apcs.economics.ProducerCurve#copyCurve(apcs.economics.Point[])}.
 	 */
 	@Test
 	public final void testCopyCurve() {
 		Point[] curve1 = new Point[10];
 		ProducerCurve pc1 = new ProducerCurve(curve1);
 		Point[] curve2 = pc1.copyCurve(curve1);
-		assertSame(curve1, curve2);
+		assertArrayEquals(curve1, curve2);
 	}
 
 	/**
-	 * Test method for {@link edu.ehs.apcs.curve.ProducerCurve#deletePointAtBeginningOfCurve(edu.ehs.apcs.point.Point)}.
+	 * Test method for {@link apcs.economics.ProducerCurve#deletePointAtBeginningOfCurve(apcs.economics.Point)}.
 	 */
 	@Test
 	public final void testDeletePointAtBeginningOfCurve() {
@@ -65,7 +65,7 @@ public class ProducerCurveTest {
 	}
 
 	/**
-	 * Test method for {@link edu.ehs.apcs.curve.ProducerCurve#deletePointAtMiddleOfCurve(int)}.
+	 * Test method for {@link apcs.economics.ProducerCurve#deletePointAtMiddleOfCurve(int)}.
 	 */
 	@Test
 	public final void testDeletePointAtMiddleOfCurve() {
@@ -73,7 +73,7 @@ public class ProducerCurveTest {
 	}
 
 	/**
-	 * Test method for {@link edu.ehs.apcs.curve.ProducerCurve#deletePointAtEndOfCurve(edu.ehs.apcs.point.Point)}.
+	 * Test method for {@link apcs.economics.ProducerCurve#deletePointAtEndOfCurve(apcs.economics.Point)}.
 	 */
 	@Test
 	public final void testDeletePointAtEndOfCurve() {
@@ -81,7 +81,7 @@ public class ProducerCurveTest {
 	}
 
 	/**
-	 * Test method for {@link edu.ehs.apcs.curve.ProducerCurve#setPoint(edu.ehs.apcs.point.Point, int)}.
+	 * Test method for {@link apcs.economics.ProducerCurve#setPoint(apcs.economics.Point, int)}.
 	 */
 	@Test
 	public final void testSetPoint() {
@@ -91,12 +91,12 @@ public class ProducerCurveTest {
 		testProducerCurve.setPoint(testPoint, 7);
 		
 		//assertTrue(testProducerCurve.getPoint(7).equals(testPoint));
-		//assertSame(testPoint, testProducerCurve.getPoint(7));
+		//assertEqual(testPoint, testProducerCurve.getPoint(7));
 		fail("not yet implemented.");
 	}
 
 	/**
-	 * Test method for {@link edu.ehs.apcs.curve.ProducerCurve#isEmpty()}.
+	 * Test method for {@link apcs.economics.ProducerCurve#isEmpty()}.
 	 */
 	@Test
 	public final void testIsEmpty() {
