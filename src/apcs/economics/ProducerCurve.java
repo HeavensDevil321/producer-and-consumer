@@ -36,23 +36,30 @@ public class ProducerCurve
 	}
 	
 	/**
-	 * 
+	 * Inserts a point into the curve array. Size of array increases.
 	 * @param point the Point to be added to the array
 	 * @param index the location of the new Point
 	 */
 	public void addPointToCurve(Point point, int index)
-	{
-		
-		// Assume when the index is first
-		// Assume when the index is last
-		// Assume when the index is in the middle
-		// Assume when the index exceeds the current array size
-		
-		// Assume the array is empty and the curve array exists
-		if (isEmpty() && this.curvePoints != null) 
+	{		
+		if (this.curvePoints != null) 
 		{
-			
-		}
+			if ((index < this.curvePoints.length) && (index >= 0))
+			{				
+				if (index == 0)
+				{
+					addPointToBeginningOfCurve(point);
+				}
+				else if (index == this.curvePoints.length - 1)//FIXME bug?
+				{
+					addPointToEndOfCurve(point);
+				}
+				else
+				{
+					addPointToMiddleOfCurve(point, index);
+				}
+			}
+		}	
 	}
 	
 	/**
@@ -64,7 +71,7 @@ public class ProducerCurve
 	 */
 	public void setPoint(Point point, int index) 
 	{
-		if ((index < this.curvePoints.length) && (index > 0))
+		if ((index < this.curvePoints.length) && (index >= 0))
 		{
 			this.curvePoints[index] = point;
 		}	
@@ -80,7 +87,7 @@ public class ProducerCurve
 			{
 				temp = deletePointAtBeginningOfCurve();
 			}
-			if(index == this.curvePoints.length - 1)
+			else if (index == this.curvePoints.length - 1)
 			{
 				temp = deletePointAtEndOfCurve();
 			}
@@ -94,22 +101,13 @@ public class ProducerCurve
 	
 	public Point[] deletePointInCurve(Point point)
 	{
-		//TODO
-		if ((index >= 0) && (index < this.curvePoints.length))
-		{
-			if (index == 0)
-			{
-				deletePointAtBeginningOfCurve(getPointInCurve(index));
-			}
-			if(index == this.curvePoints.length - 1)
-			{
-				deletePointAtEndOfCurve(getPointInCurve(index));
-			}
-			else 
-			{
-				deletePointAtMiddleOfCurve(index);
-			}
-		}
+		Point[] temp = null;
+		
+		// If the point exist / is within the curve
+		//  then get index of point
+		//  then delete at index
+		// else ignore delete		
+		return temp;
 	}
 	
 	public Point[] getProducerCurveArray()
@@ -118,9 +116,9 @@ public class ProducerCurve
 	}
 	
 	/**
-	 * Copies a array curve
+	 * Creates copy of given Point[]
 	 * @param curve sets curve as an array of points
-	 * @return
+	 * @return Point[]
 	 */
 	public Point[] copyCurve(Point[] curve)
 	{
@@ -136,6 +134,7 @@ public class ProducerCurve
 	public int getIndexOf(Point point)
 	{
 		//TODO returns the index of the given point in the curve
+		return 0;
 	}
 	
 	public Point getPointInCurve(int index)
@@ -151,6 +150,7 @@ public class ProducerCurve
 	public boolean isPointInCurve(Point point)
 	{
 		//TODO returns true if the point exist within the curve
+		return false;
 	}
 	
 	/**
@@ -192,22 +192,22 @@ public class ProducerCurve
 	 * @param index
 	 * @return
 	 */
-	private Point[] addPoint(Point point, int index)
+	private void addPointToMiddleOfCurve(Point point, int index)
 	{
 		Point[] newCurve = null;
 		
-		if(index < this.curvePoints.length) // Index with in bounds
+		if ((index < this.curvePoints.length) && (index >= 0)) // Index with in bounds
 		{
 			newCurve = new Point[index + 1];
 			
-			for(int x = 0; x < this.curvePoints.length; x++)
+			for (int x = 0; x < this.curvePoints.length; x++)
 			{
-				if(x == index)
+				if (x == index)
 				{
 					newCurve[index] = point;
 					newCurve[x +1] = this.curvePoints[x];
 				}
-				else if(x < index)
+				else if (x < index)
 				{
 					newCurve[x] = this.curvePoints[x];
 				}
@@ -217,8 +217,8 @@ public class ProducerCurve
 				}
 			}
 			
+			this.curvePoints = newCurve;
 		}
-		return newCurve;
 	}
 	
 	/**
@@ -226,7 +226,7 @@ public class ProducerCurve
 	 * @param point
 	 * @return Point[] newCurve
 	 */
-	private Point[] addPointToBeginningOfCurve(Point point)
+	private void addPointToBeginningOfCurve(Point point)
 	{
 		Point[] newCurve = new Point[this.curvePoints.length + 1];
 		newCurve[0] = point;
@@ -235,16 +235,16 @@ public class ProducerCurve
 		{
 			newCurve[x] = this.curvePoints[x - 1];
 		}
-		return newCurve;
+		
+		this.curvePoints = newCurve;
 	}
-	
-	
+		
 	/**
 	 * Appends a single point to the end of the curve
 	 * @param point
 	 * @return Point[] newCurve
 	 */
-	private Point[] addPointToEndOfCurve(Point point)
+	private void addPointToEndOfCurve(Point point)
 	{
 		Point[] newCurve = new Point[this.curvePoints.length + 1];
 		newCurve[newCurve.length - 1] = point;
@@ -253,7 +253,8 @@ public class ProducerCurve
 		{
 			newCurve[x] = this.curvePoints[x];
 		}
-		return newCurve;
+		
+		this.curvePoints = newCurve;
 	}
 		
 	/**
