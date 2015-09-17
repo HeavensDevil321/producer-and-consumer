@@ -2,6 +2,11 @@ package apcs.economics;
 
 import java.util.Arrays;
 
+/**
+ * 
+ * @author German
+ *
+ */
 public class ProducerCurve 
 {
 	private Point[] curvePoints;
@@ -44,20 +49,142 @@ public class ProducerCurve
 		// Assume when the index exceeds the current array size
 		
 		// Assume the array is empty and the curve array exists
-		if (isEmpty() && this.curvePoints != null) {
-			if (index < this.curvePoints.length)
+		if (isEmpty() && this.curvePoints != null) 
+		{
+			
+		}
+	}
+	
+	/**
+	 * Replace the specified point at the array index
+	 * If the index passed is larger than the array length,
+	 * it will not set the point
+	 * @param point the Point to set
+	 * @param index the index of the array
+	 */
+	public void setPoint(Point point, int index) 
+	{
+		if ((index < this.curvePoints.length) && (index > 0))
+		{
+			this.curvePoints[index] = point;
+		}	
+	}
+	
+	public Point[] deletePointInCurve(int index)
+	{
+		Point[] temp = null;
+		
+		if ((index >= 0) && (index < this.curvePoints.length))
+		{
+			if (index == 0)
 			{
-				setPoint(point, index);
+				temp = deletePointAtBeginningOfCurve();
 			}
-			else // (index >= this.curvePoints.lenth) 
+			if(index == this.curvePoints.length - 1)
 			{
-				Point[] oldCurve = copyCurve(this.curvePoints);
-				Point[] newCurve = new Point[index + 1];
-				
+				temp = deletePointAtEndOfCurve();
+			}
+			else 
+			{
+				temp = deletePointAtMiddleOfCurve(index);
+			}
+		}
+		return temp;
+	}
+	
+	public Point[] deletePointInCurve(Point point)
+	{
+		//TODO
+		if ((index >= 0) && (index < this.curvePoints.length))
+		{
+			if (index == 0)
+			{
+				deletePointAtBeginningOfCurve(getPointInCurve(index));
+			}
+			if(index == this.curvePoints.length - 1)
+			{
+				deletePointAtEndOfCurve(getPointInCurve(index));
+			}
+			else 
+			{
+				deletePointAtMiddleOfCurve(index);
 			}
 		}
 	}
 	
+	public Point[] getProducerCurveArray()
+	{
+		return this.curvePoints;
+	}
+	
+	/**
+	 * Copies a array curve
+	 * @param curve sets curve as an array of points
+	 * @return
+	 */
+	public Point[] copyCurve(Point[] curve)
+	{
+		Point[] copy = curve;
+		return copy;
+	}
+
+	public int getSizeOfCurve()
+	{
+		return this.curvePoints.length;
+	}
+	
+	public int getIndexOf(Point point)
+	{
+		//TODO returns the index of the given point in the curve
+	}
+	
+	public Point getPointInCurve(int index)
+	{
+		if ((index < this.curvePoints.length) && (index > 0))
+		{
+			return this.curvePoints[index];
+		}
+		
+		return null;
+	}
+	
+	public boolean isPointInCurve(Point point)
+	{
+		//TODO returns true if the point exist within the curve
+	}
+	
+	/**
+	 * Check if array is empty 
+	 */
+	public boolean isEmpty()
+	{
+		if (this.curvePoints == null)
+		{
+			return true;
+		}
+		else
+		{
+			for(int x = 0; x < this.curvePoints.length; x++)
+			{
+				if (this.curvePoints[x] != null)
+				{
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() 
+	{
+		return "ProducerCurve [curvePoints=" + Arrays.toString(curvePoints)
+				+ "]";
+	}
+		
 	/**
 	 * Makes a new array curve that has one more index then the old curve
 	 * and move down the old point and the new point to the new curve.
@@ -128,25 +255,14 @@ public class ProducerCurve
 		}
 		return newCurve;
 	}
-	
-	/**
-	 * Copies a array curve
-	 * @param curve sets curve as an array of points
-	 * @return
-	 */
-	public Point[] copyCurve(Point[] curve)
-	{
-		Point[] copy = curve;
-		return copy;
-	}
-	
+		
 	/**
 	 * Makes a new array that has one less then then ignores the beginning point and 
 	 * copies down the rest of the old curve to the new
 	 * @param point
 	 * @return
 	 */
-	public Point[] deletePointAtBeginningOfCurve(Point point)
+	private Point[] deletePointAtBeginningOfCurve()
 	{
 		Point[] newCurve = new Point[this.curvePoints.length - 1];
 		
@@ -158,11 +274,11 @@ public class ProducerCurve
 	}
 	
 	/**
-	 * Makes a new array 
+	 *  
 	 * @param index
 	 * @return
 	 */
-	public Point[] deletePointAtMiddleOfCurve(int index)
+	private Point[] deletePointAtMiddleOfCurve(int index)
 	{
 		Point[] newCurve = new Point[this.curvePoints.length-1];
 		
@@ -184,7 +300,7 @@ public class ProducerCurve
 		return newCurve;
 	}
 	
-	public Point[] deletePointAtEndOfCurve(Point point)
+	private Point[] deletePointAtEndOfCurve()
 	{
 		Point[] newCurve = new Point[this.curvePoints.length - 1];
 		
@@ -195,53 +311,5 @@ public class ProducerCurve
 		return newCurve;
 	}
 	
-	/**
-	 * Replace the specified point at the array index
-	 * If the index passed is larger than the array length,
-	 * it will not set the point
-	 * @param point the Point to set
-	 * @param index the index of the array
-	 */
-	public void setPoint(Point point, int index) 
-	{
-		if (index < this.curvePoints.length)
-		{
-			this.curvePoints[index] = point;
-		}	
-	}
-	
-	/**
-	 * Check if array is empty 
-	 */
-	public boolean isEmpty()
-	{
-		if (this.curvePoints == null)
-		{
-			return true;
-		}
-		else
-		{
-			for(int x = 0; x < this.curvePoints.length; x++)
-			{
-				if (this.curvePoints[x] != null)
-				{
-					return false;
-				}
-			}
-		}
-		return true;
-	}
-
-	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() 
-	{
-		return "ProducerCurve [curvePoints=" + Arrays.toString(curvePoints)
-				+ "]";
-	}
-	
-	 
+		 
 }
