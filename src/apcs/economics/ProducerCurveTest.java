@@ -12,13 +12,17 @@ import org.junit.Test;
  * @author Gabriel
  *
  */
-public class ProducerCurveTest {
+public class ProducerCurveTest 
+{
+	Point p1 = new Point(4,5);
+	Point p2 = new Point(2,2);
 
 	/**
 	 * Test method for {@link apcs.economics.ProducerCurve#ProducerCurve()}.
 	 */
 	@Test
-	public final void testProducerCurve() {
+	public final void testProducerCurve() 
+	{
 		ProducerCurve myProducerCurve = new ProducerCurve();
 		assertNotNull("Object Created.", myProducerCurve);
 	}
@@ -27,7 +31,8 @@ public class ProducerCurveTest {
 	 * Test method for {@link apcs.economics.ProducerCurve#ProducerCurve(apcs.economics.Point[])}.
 	 */
 	@Test
-	public final void testProducerCurvePointArray() {
+	public final void testProducerCurvePointArray() 
+	{
 		Point[] curvePoints = new Point[10];
 		ProducerCurve testProducerCurve = new ProducerCurve(curvePoints);
 		assertNotNull("ProducerCurve Created.", testProducerCurve);
@@ -39,9 +44,16 @@ public class ProducerCurveTest {
 	 * Test method for {@link apcs.economics.ProducerCurve#addPointToCurve(apcs.economics.Point, int)}.
 	 */
 	@Test
-	public final void testAddPointToCurve() {
-		fail("Not yet implemented"); // TODO
+	public final void testAddPointToCurve() 
+	{
+		Point[] curvePoints = new Point[10];
+		ProducerCurve testProducerCurve = new ProducerCurve(curvePoints);
+		assertNotNull("ProducerCurve Created.", testProducerCurve);
+		assertTrue("Added a point.", testProducerCurve.addPointToCurve());
+		// TODO
 	}
+
+	
 
 	/**
 	 * Test method for {@link apcs.economics.ProducerCurve#copyCurve(apcs.economics.Point[])}.
@@ -52,6 +64,8 @@ public class ProducerCurveTest {
 		ProducerCurve pc1 = new ProducerCurve(curve1);
 		Point[] curve2 = pc1.copyCurve(curve1);
 		assertArrayEquals(curve1, curve2);
+		
+		System.out.println("copied curve :"+ curve2.toString());
 	}
 
 	/**

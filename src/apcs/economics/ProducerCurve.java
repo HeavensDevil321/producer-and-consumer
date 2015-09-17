@@ -11,6 +11,7 @@ public class ProducerCurve
 {
 	private Point[] curvePoints;
 	
+	// Bubble sort or just sort
 	// The default size of the ideal array
 	private static final int DEFAULT_ARRAY_SIZE = 10;
 	
@@ -77,6 +78,11 @@ public class ProducerCurve
 		}	
 	}
 	
+	/**
+	 * Delete a point within bound.
+	 * @param index
+	 * @return
+	 */
 	public Point[] deletePointInCurve(int index)
 	{
 		Point[] temp = null;
@@ -98,6 +104,7 @@ public class ProducerCurve
 		}
 		return temp;
 	}
+	
 	
 	public Point[] deletePointInCurve(Point point)
 	{
