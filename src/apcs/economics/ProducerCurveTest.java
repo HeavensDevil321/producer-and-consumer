@@ -1,16 +1,19 @@
 package apcs.economics;
 
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 
 /**
- * @author Gabriel
- *
+ * @author German G. Rivera
+ * @date 8/26/2015
+ * @hour 3rd hr.
+ * Test for ProducerCurve
  */
 public class ProducerCurveTest 
 {
@@ -49,30 +52,34 @@ public class ProducerCurveTest
 		Point[] curvePoints = new Point[10];
 		ProducerCurve testProducerCurve = new ProducerCurve(curvePoints);
 		assertNotNull("ProducerCurve Created.", testProducerCurve);
-		assertTrue("Added a point.", testProducerCurve.addPointToCurve());
+		
+		assertTrue("Added a point.", testProducerCurve.addPointToCurve(p1, 0));
 		// TODO
 	}
 
 	
 
+
 	/**
 	 * Test method for {@link apcs.economics.ProducerCurve#copyCurve(apcs.economics.Point[])}.
 	 */
 	@Test
-	public final void testCopyCurve() {
+	public final void testCopyCurve() 
+	{
 		Point[] curve1 = new Point[10];
 		ProducerCurve pc1 = new ProducerCurve(curve1);
 		Point[] curve2 = pc1.copyCurve(curve1);
 		assertArrayEquals(curve1, curve2);
 		
-		System.out.println("copied curve :"+ curve2.toString());
+		
 	}
 
 	/**
 	 * Test method for {@link apcs.economics.ProducerCurve#deletePointAtBeginningOfCurve(apcs.economics.Point)}.
 	 */
 	@Test
-	public final void testDeletePointAtBeginningOfCurve() {
+	public final void testDeletePointAtBeginningOfCurve() 
+	{
 		fail("Not yet implemented"); // TODO
 	}
 
@@ -80,7 +87,8 @@ public class ProducerCurveTest
 	 * Test method for {@link apcs.economics.ProducerCurve#deletePointAtMiddleOfCurve(int)}.
 	 */
 	@Test
-	public final void testDeletePointAtMiddleOfCurve() {
+	public final void testDeletePointAtMiddleOfCurve() 
+	{
 		fail("Not yet implemented"); // TODO
 	}
 
@@ -88,7 +96,8 @@ public class ProducerCurveTest
 	 * Test method for {@link apcs.economics.ProducerCurve#deletePointAtEndOfCurve(apcs.economics.Point)}.
 	 */
 	@Test
-	public final void testDeletePointAtEndOfCurve() {
+	public final void testDeletePointAtEndOfCurve() 
+	{
 		fail("Not yet implemented"); // TODO
 	}
 
@@ -96,22 +105,24 @@ public class ProducerCurveTest
 	 * Test method for {@link apcs.economics.ProducerCurve#setPoint(apcs.economics.Point, int)}.
 	 */
 	@Test
-	public final void testSetPoint() {
+	public final void testSetPoint() 
+	{
 		Point[] pointArray = new Point[10];
 		Point testPoint = new Point(1, 1.0);
 		ProducerCurve testProducerCurve = new ProducerCurve(pointArray);
 		testProducerCurve.setPoint(testPoint, 7);
 		
 		//assertTrue(testProducerCurve.getPoint(7).equals(testPoint));
-		assertArrayEqual(testPoint, testProducerCurve.getPointInCurve(7));
-		fail("not yet implemented.");
+		assertEquals(testPoint, testProducerCurve.getPointInCurve(7));
+		
 	}
 
 	/**
 	 * Test method for {@link apcs.economics.ProducerCurve#isEmpty()}.
 	 */
 	@Test
-	public final void testIsEmpty() {
+	public final void testIsEmpty() 
+	{
 		Point[] curvePoints = new Point[10];
 		ProducerCurve testProducerCurve = new ProducerCurve(curvePoints);
 		assertTrue("Curve is Empty.", testProducerCurve.isEmpty());
@@ -123,6 +134,10 @@ public class ProducerCurveTest
 
 	public final void testToString()
 	{
-		fail("not yet inputted.");
+		Point[] curvePoints = new Point[10];
+		ProducerCurve testProducerCurve = new ProducerCurve(curvePoints);
+		
+		
+		assertTrue(testProducerCurve.toString());
 	}
 }

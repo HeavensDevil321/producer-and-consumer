@@ -3,9 +3,11 @@ package apcs.economics;
 import java.util.Arrays;
 
 /**
- * 
- * @author German
- *
+ * @author German G. Rivera
+ * @date 8/26/2015
+ * @hour 3rd hr.
+ * ProducerCurve with an up hill curve 
+ * with array
  */
 public class ProducerCurve 
 {
@@ -51,7 +53,7 @@ public class ProducerCurve
 				{
 					addPointToBeginningOfCurve(point);
 				}
-				else if (index == this.curvePoints.length - 1)//FIXME bug?
+				else if (index == this.curvePoints.length - 1)
 				{
 					addPointToEndOfCurve(point);
 				}
@@ -105,7 +107,11 @@ public class ProducerCurve
 		return temp;
 	}
 	
-	
+	/**
+	 * UD (undecided)
+	 * @param point
+	 * @return
+	 */
 	public Point[] deletePointInCurve(Point point)
 	{
 		Point[] temp = null;
@@ -117,6 +123,10 @@ public class ProducerCurve
 		return temp;
 	}
 	
+	/**
+	 * Returns Array of the curve
+	 * @return
+	 */
 	public Point[] getProducerCurveArray()
 	{
 		return this.curvePoints;
@@ -132,18 +142,32 @@ public class ProducerCurve
 		Point[] copy = curve;
 		return copy;
 	}
-
+	
+    /**
+     * Returns size of the array
+     * @return
+     */
 	public int getSizeOfCurve()
 	{
 		return this.curvePoints.length;
 	}
 	
+	/**
+	 * Returns the index of the given point in the curve
+	 * @param point
+	 * @return
+	 */
 	public int getIndexOf(Point point)
 	{
 		//TODO returns the index of the given point in the curve
 		return 0;
 	}
 	
+	/**
+	 * Returns the Point of the given index in the curve
+	 * @param index
+	 * @return
+	 */
 	public Point getPointInCurve(int index)
 	{
 		if ((index < this.curvePoints.length) && (index > 0))
@@ -154,6 +178,11 @@ public class ProducerCurve
 		return null;
 	}
 	
+	/**
+	 * To check if a point is in the array.
+	 * @param point
+	 * @return
+	 */
 	public boolean isPointInCurve(Point point)
 	{
 		//TODO returns true if the point exist within the curve
@@ -182,8 +211,8 @@ public class ProducerCurve
 		return true;
 	}
 	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
+	/** 
+	 * to String to layout the array in console
 	 */
 	@Override
 	public String toString() 
@@ -282,7 +311,7 @@ public class ProducerCurve
 	}
 	
 	/**
-	 *  
+	 * Makes an array thats is -1 of the curvePoints
 	 * @param index
 	 * @return
 	 */
@@ -308,6 +337,10 @@ public class ProducerCurve
 		return newCurve;
 	}
 	
+	/**
+	 * Deletion of point at the end of the array
+	 * @return
+	 */
 	private Point[] deletePointAtEndOfCurve()
 	{
 		Point[] newCurve = new Point[this.curvePoints.length - 1];

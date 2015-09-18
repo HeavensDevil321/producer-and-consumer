@@ -7,7 +7,8 @@ import java.util.ArrayList;
  * @author German G. Rivera
  * @date 8/26/2015
  * @hour 3rd hr.
- * 
+ * Consumer Curve as ArrayList with
+ * down hill slope
  *
  */
 public class ConsumerCurve 
@@ -19,43 +20,120 @@ public class ConsumerCurve
 	/**
 	 * @param curvePoints
 	 */
-	public ConsumerCurve(ArrayList<Point> curvePoints) {
+	public ConsumerCurve(ArrayList<Point> curvePoints) 
+	{
 	
 		this.curvePoints = curvePoints;
 	}
 
 	/**
-	 * 
+	 * construct a default size of the array with 
+	 * each index contain point
 	 */
-	public ConsumerCurve() {
+	public ConsumerCurve() 
+	{
+		this.curvePoints = new ArrayList<Point>();
 		
+		
+		for(int x = 0; x < DEFAULT_ARRAY_SIZE; x++)
+		{
+			this.curvePoints.add(new Point(0,0)); 
+		}
 		// TODO Auto-generated constructor stub
 	}
 
-	
-
-	public void addPointToCurve(Point point, int index)
+	/**
+	 * search if point don't exist in array then add point
+	 * @param point
+	 * @param index
+	 */
+	public void addPointInCurve(Point point, int index)
 	{
-		
-		
+			// check if the point exists
+			if (!(find(point)))
+			{
+				this.curvePoints.add(index, point);
+			}
+			
+			
 	}
 	
-	public void deletePointToCurve()
+	/**
+	 * deletion of point
+	 * @param index
+	 */
+	public void deletePointInCurve(int index)
 	{
-		
+		if ((index >= 0) && (index < this.curvePoints.size()))
+		{
+			this.curvePoints.remove(index);
+		}
 	}
 	
+	/**
+	 *
+	 * @return curvePoints
+	 */
 	public ArrayList<Point> get()
 	{
 		return curvePoints;
 		
 	}
 	
-	public int size()
+	/**
+	 * Find existing points in array
+	 * @param point
+	 * @return
+	 */
+	public boolean find(Point point)
 	{
+		for (int x = 0; x < this.curvePoints.size(); x++)
+		{
+			Point tempPoint = this.curvePoints.get(x);
+						
+			if (tempPoint.equals(point))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * checks if the points are equal
+	 * @param point
+	 * @param index
+	 * @return
+	 */
+	public boolean equals(Point point, int index)
+	{
+		
+		Point tempPoint = this.curvePoints.get(index);
+		if ((tempPoint.getQuantity() == point.getQuantity()) && (tempPoint.getPrice() == point.getPrice()))
+		{
+			return true;
+		}
+		return false;
 		
 	}
 	
+	/**
+	 * 
+	 * @return size of array
+	 */
+	public int size()
+	{
+		return this.curvePoints.size();
+	}
+
+	/**
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() 
+	{
+		return "[" + curvePoints + "]";
+	}
 	
 	
 }
