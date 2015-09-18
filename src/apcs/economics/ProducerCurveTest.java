@@ -57,9 +57,6 @@ public class ProducerCurveTest
 		// TODO
 	}
 
-	
-
-
 	/**
 	 * Test method for {@link apcs.economics.ProducerCurve#copyCurve(apcs.economics.Point[])}.
 	 */

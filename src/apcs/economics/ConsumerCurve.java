@@ -53,9 +53,7 @@ public class ConsumerCurve
 			if (!(find(point)))
 			{
 				this.curvePoints.add(index, point);
-			}
-			
-			
+			}			
 	}
 	
 	/**
@@ -133,8 +131,6 @@ public class ConsumerCurve
 	public String toString() 
 	{
 		return "[" + curvePoints + "]";
-	}
-	
-	
+	}	
 }
 //TODO get consumer working 

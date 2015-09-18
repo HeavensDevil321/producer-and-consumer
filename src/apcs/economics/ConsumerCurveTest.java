@@ -55,8 +55,6 @@ public class ConsumerCurveTest
 			System.out.println("search point (1,3.2):" + test2.find(new Point(1, 3.2)));
 			System.out.println("List:" + test2.toString());
 						
-			System.out.println("are the the point equal:" + test.find(new Point(2,2.3)));
-			
-	
+			System.out.println("are the the point equal:" + test.find(new Point(2,2.3)));	
 		}
 }

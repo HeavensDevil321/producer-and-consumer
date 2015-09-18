@@ -7,13 +7,12 @@ import java.util.Arrays;
  * @date 8/26/2015
  * @hour 3rd hr.
  * ProducerCurve with an up hill curve 
- * with array
+ * with array.
  */
 public class ProducerCurve 
 {
 	private Point[] curvePoints;
 	
-	// Bubble sort or just sort
 	// The default size of the ideal array
 	private static final int DEFAULT_ARRAY_SIZE = 10;
 	
@@ -350,7 +349,5 @@ public class ProducerCurve
 			newCurve[x] = this.curvePoints[x];
 		}
 		return newCurve;
-	}
-	
-		 
+	}		 
 }
