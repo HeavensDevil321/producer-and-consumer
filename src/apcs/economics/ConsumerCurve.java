@@ -112,7 +112,6 @@ public class ConsumerCurve
 			return true;
 		}
 		return false;
-		
 	}
 	
 	/**

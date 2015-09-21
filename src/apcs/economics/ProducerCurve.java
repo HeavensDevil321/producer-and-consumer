@@ -9,6 +9,9 @@ import java.util.Arrays;
  * ProducerCurve with an up hill curve 
  * with array.
  */
+
+//TODO fix the producer curve to the point where it doesn't deal with indexes just add point to its specific array
+//FIXME take out unneeded methods to the class and fix them to make sense
 public class ProducerCurve 
 {
 	private Point[] curvePoints;
