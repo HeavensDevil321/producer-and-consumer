@@ -78,7 +78,7 @@ public class ConsumerCurve
 	 *
 	 * @return curvePoints
 	 */
-	public ArrayList<Point> get()
+	public ArrayList<Point> getList()
 	{
 		return curvePoints;
 		
