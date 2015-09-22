@@ -30,6 +30,9 @@ public class ConsumerCurve
 	 * construct a default size of the array with 
 	 * each index contain point
 	 */
+	//FIXME make one of the constructor to do the slope of the curve
+	//FIXME make linear curve 0,0 thro 9,9
+	
 	public ConsumerCurve() 
 	{
 		this.curvePoints = new ArrayList<Point>();
@@ -47,7 +50,7 @@ public class ConsumerCurve
 	 * @param point
 	 * @param index
 	 */
-	public void addPointInCurve(Point point, int index)
+	public void add(Point point, int index)
 	{
 			// check if the point exists
 			if (!(find(point)))
@@ -60,7 +63,7 @@ public class ConsumerCurve
 	 * deletion of point
 	 * @param index
 	 */
-	public void deletePointInCurve(int index)
+	public void remove(int index)
 	{
 		if ((index >= 0) && (index < this.curvePoints.size()))
 		{

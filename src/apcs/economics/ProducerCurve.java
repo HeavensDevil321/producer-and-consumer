@@ -10,7 +10,7 @@ import java.util.Arrays;
  * with array.
  */
 
-//TODO fix the producer curve to the point where it doesn't deal with indexes just add point to its specific array
+//TODO fix the producer curve to the point where it doesn't deal with indexes just uses only points to its specific array slot
 //FIXME take out unneeded methods to the class and fix them to make sense
 public class ProducerCurve 
 {
@@ -25,6 +25,7 @@ public class ProducerCurve
 	 */
 	public ProducerCurve()
 	{
+		//FIXME change one of the constructor to do the slope for producer
 		super();
 		this.curvePoints = new Point[DEFAULT_ARRAY_SIZE];
 	}
@@ -317,6 +318,7 @@ public class ProducerCurve
 	 * @param index
 	 * @return
 	 */
+	//FIXME switch index to point 
 	private Point[] deletePointAtMiddleOfCurve(int index)
 	{
 		Point[] newCurve = new Point[this.curvePoints.length-1];

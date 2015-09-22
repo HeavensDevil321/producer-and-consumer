@@ -1,5 +1,6 @@
-package apcs.economics;
+package apcs.economics.testclasses;
 
+import apcs.economics.Point;
 
 /**
  * @author German Rivera
