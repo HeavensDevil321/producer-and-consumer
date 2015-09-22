@@ -23,10 +23,17 @@ public class ProducerCurve
 	 * Constructor method
 	 * Instantiated curvePoints to an array of 10 Points
 	 */
-	public ProducerCurve()
-	{
-		super();
+	public ProducerCurve(int np, double m, double b, int dx)
+	{		
 		this.curvePoints = new Point[DEFAULT_ARRAY_SIZE];
+		
+		for (int i = 0; i < np; i++)
+		{
+			int x = i * dx;
+			double y = m * x + b;
+			Point tBA = new Point(x,y);
+			
+		}
 	}
 	
 	/**
@@ -36,7 +43,7 @@ public class ProducerCurve
 	 */
 	public ProducerCurve(Point[] curvePoints) 
 	{
-		super();// Inherits to parent class
+		
 		this.curvePoints = curvePoints;
 	}
 	
@@ -45,6 +52,7 @@ public class ProducerCurve
 	 * @param point the Point to be added to the array
 	 * @param index the location of the new Point
 	 */
+	//make this to only add point
 	public void addPointToCurve(Point point, int index)
 	{		
 		if (this.curvePoints != null) 
@@ -154,16 +162,16 @@ public class ProducerCurve
 		return this.curvePoints.length;
 	}
 	
-	/**
-	 * Returns the index of the given point in the curve
-	 * @param point
-	 * @return
-	 */
-	public int getIndexOf(Point point)
-	{
-		//TODO returns the index of the given point in the curve
-		return 0;
-	}
+//	/**
+//	 * Returns the index of the given point in the curve
+//	 * @param point
+//	 * @return
+//	 */
+//	public int getIndexOf(Point point)
+//	{
+//		//TODO returns the index of the given point in the curve
+//		return 0;
+//	}
 	
 	/**
 	 * Returns the Point of the given index in the curve
@@ -194,6 +202,7 @@ public class ProducerCurve
 	/**
 	 * Check if array is empty 
 	 */
+	//TODO FIXME  need to create a search or contain method
 	public boolean isEmpty()
 	{
 		if (this.curvePoints == null)
@@ -211,6 +220,15 @@ public class ProducerCurve
 			}
 		}
 		return true;
+	}
+	
+	public boolean searchPoint()
+	{
+		for(int i = 0; i < this.curvePoints.length; i++)
+		{
+			
+		}
+		return false;
 	}
 	
 	/** 

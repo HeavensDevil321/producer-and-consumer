@@ -1,9 +1,12 @@
 /**
  * 
  */
-package apcs.economics;
+package apcs.economics.testclasses;
 
 import java.util.ArrayList;
+
+import apcs.economics.ConsumerCurve;
+import apcs.economics.Point;
 
 /**
  * @author German G. Rivera

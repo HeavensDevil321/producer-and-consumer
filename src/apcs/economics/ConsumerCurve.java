@@ -21,7 +21,11 @@ public class ConsumerCurve
 	 * @param curvePoints
 	 */
 	public ConsumerCurve(ArrayList<Point> curvePoints) 
-	{
+	{		
+		for(int x = 0; x < DEFAULT_ARRAY_SIZE; x++)
+		{
+			this.curvePoints.add(new Point(0,0)); 
+		}
 	
 		this.curvePoints = curvePoints;
 	}
@@ -30,16 +34,18 @@ public class ConsumerCurve
 	 * construct a default size of the array with 
 	 * each index contain point
 	 */
-	public ConsumerCurve() 
+	public ConsumerCurve(int np, double m, double b, int dx) 
 	{
-		this.curvePoints = new ArrayList<Point>();
+		this.curvePoints = new ArrayList<Point>(np);
 		
-		
-		for(int x = 0; x < DEFAULT_ARRAY_SIZE; x++)
+		for (int i = 0; i < np; i++)
 		{
-			this.curvePoints.add(new Point(0,0)); 
+			int x = i * dx;
+			double y = m * x + b;
+			Point tBA = new Point(x,y);
+			this.curvePoints.add(tBA);
 		}
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
