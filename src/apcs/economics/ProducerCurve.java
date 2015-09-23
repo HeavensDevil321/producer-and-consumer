@@ -23,10 +23,7 @@ public class ProducerCurve
 	 * Constructor method
 	 * Instantiated curvePoints to an array of 10 Points
 	 */
-	public ProducerCurve()
-	{
-		//FIXME change one of the constructor to do the slope for producer
-	}
+	//FIXME change one of the constructor to do the slope for producer
 	public ProducerCurve(int np, double m, double b, int dx)
 	{		
 		this.curvePoints = new Point[DEFAULT_ARRAY_SIZE];
@@ -182,16 +179,28 @@ public class ProducerCurve
 	 * @param index
 	 * @return
 	 */
-	public Point getPointInCurve(int index)
+	public Point getPoint(Point point)
 	{
-		if ((index < this.curvePoints.length) && (index > 0))
+		for (int x = 0; x < this.curvePoints.length; x++)
 		{
-			return this.curvePoints[index];
+			return this.curvePoints[x];
 		}
 		
-		return null;
+		return point;
 	}
 	
+	
+	
+	
+	
+	
+	/**
+	 * @return the curvePoints
+	 */
+	public Point[] getCurvePoints() {
+		return curvePoints;
+	}
+
 	/**
 	 * To check if a point is in the array.
 	 * @param point
@@ -200,6 +209,14 @@ public class ProducerCurve
 	public boolean isPointInCurve(Point point)
 	{
 		//TODO returns true if the point exist within the curve
+		if (this.curvePoints != null)
+		{
+			for (int x = 0; x < this.curvePoints.length; x++)
+			{
+				this.curvePoints[x] = Point p  ;
+			}
+			return true;
+		}
 		return false;
 	}
 	
@@ -207,6 +224,7 @@ public class ProducerCurve
 	 * Check if array is empty 
 	 */
 	//TODO FIXME  need to create a search or contain method
+	//FIXME possible don't need this
 	public boolean isEmpty()
 	{
 		if (this.curvePoints == null)

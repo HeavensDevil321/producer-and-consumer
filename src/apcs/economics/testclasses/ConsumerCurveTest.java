@@ -50,7 +50,7 @@ public class ConsumerCurveTest
 			System.out.println("Size:" + test2.size());
 			
 			System.out.println("FIND");			
-			System.out.println("search point (1,3.2):" + test2.find(new Point(1, 3.2)));
+			System.out.println("search point (1,3.2):" + test2.contain(new Point(1, 3.2)));
 			System.out.println("List:" + test2.toString());
 			
 			System.out.println("DELETE");
@@ -61,15 +61,15 @@ public class ConsumerCurveTest
 			System.out.println("Size:" + test2.size());
 			
 			System.out.println("FIND");			
-			System.out.println("search point (1,3.2):" + test2.find(new Point(1, 3.2)));
+			System.out.println("search point (1,3.2):" + test2.contain(new Point(1, 3.2)));
 			System.out.println("List:" + test2.toString());
 			
 			System.out.println("DELETE");
 			test2.deletePointInCurve(1);
 			System.out.println("Size:" + test2.size());
-			System.out.println("search point (1,3.2):" + test2.find(new Point(1, 3.2)));
+			System.out.println("search point (1,3.2):" + test2.contain(new Point(1, 3.2)));
 			System.out.println("List:" + test2.toString());
 						
-			System.out.println("are the the point equal:" + test.find(new Point(2,2.3)));	
+			System.out.println("are the the point equal:" + test.contain(new Point(2,2.3)));	
 		}
 }

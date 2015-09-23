@@ -37,12 +37,6 @@ public class ConsumerCurve
 
 	//FIXME make one of the constructor to do the slope of the curve
 	//FIXME make linear curve 0,0 thro 9,9
-	
-	public ConsumerCurve()
-	{
-		
-	}
-
 	public ConsumerCurve(int np, double m, double b, int dx) 
 	{
 		this.curvePoints = new ArrayList<Point>(np);
@@ -65,7 +59,7 @@ public class ConsumerCurve
 	public void add(Point point, int index)
 	{
 			// check if the point exists
-			if (!(find(point)))
+			if (!(contain(point)))
 			{
 				this.curvePoints.add(index, point);
 			}			
@@ -98,7 +92,7 @@ public class ConsumerCurve
 	 * @param point
 	 * @return
 	 */
-	public boolean find(Point point)
+	public boolean contain(Point point)
 	{
 		for (int x = 0; x < this.curvePoints.size(); x++)
 		{
@@ -119,9 +113,9 @@ public class ConsumerCurve
 	 * @return
 	 */
 	public boolean equals(Point point, int index)
-	{
-		
+	{		
 		Point tempPoint = this.curvePoints.get(index);
+		
 		if ((tempPoint.getQuantity() == point.getQuantity()) && (tempPoint.getPrice() == point.getPrice()))
 		{
 			return true;
