@@ -8,38 +8,32 @@ import java.util.ArrayList;
  * @hour 3rd hr.
  *
  */
-public abstract class AbstractCurve
+public abstract class AbstractCurve 
 {
 	private ArrayList<Point> curvePoints;
 	
 	public AbstractCurve(int np, double m, double b, int dx)
 	{
-		this.curvePoints = new ArrayList<Point>();
+		this.curvePoints = new ArrayList<Point>(np);
 		
-		for(int x = 0; x < 10; x++)
+		for (int i = 0; i < np; i++)
 		{
-			this.curvePoints.add(new Point(x,x)); 
+			int x = i * dx;
+			double y = m * x + b;
+			Point tBA = new Point(x,y);
+			this.curvePoints.add(tBA);
 		}
-		
-		
-		//TODO figure out how to do the slope for the abstract but also for PRO and CON curves
 	}
 	
 	public boolean remove(Point point)
 	{
-		//FIXME Check if it needs more then this
-		// this should delete from the beginning
 		this.curvePoints.remove(point);
-		
 		return true;
 	}
 	
 	public boolean add(Point point)
 	{
-		// adds at the beginning
-		// also check if it works
 		this.curvePoints.add(point);
-		
 		return true;
 	}
 	
@@ -59,19 +53,11 @@ public abstract class AbstractCurve
 	
 	public String toString()
 	{
-		return "[" + curvePoints +"]";
+		return "[" +curvePoints +"]";
 	}
 	
-	private int searchByX(Point point)
-	{
-		return 0;
-	}
-	
-	//sorts its self from abstract.
 	public abstract void sort();
-	//TODO need to do PRO and CON abstract classes with their own sort
-	// no bubble sort or bulz? sort
-	
 	
 	
 }
+

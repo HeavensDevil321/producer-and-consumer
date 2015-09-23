@@ -1,15 +1,82 @@
 package apcs.economics.testclasses;
 
+
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
+import org.junit.Test;
 
+/**
+ * @author German G. Rivera
+ * @date 8/26/2015
+ * @hour 3rd hr.
+ * Test for ProducerCurve
+ */
+
+/**
+	 * Test method for {@link apcs.economics.ProducerCurve#ProducerCurve()}.
+	 */
+
+/**
+	 * Test method for {@link apcs.economics.ProducerCurve#ProducerCurve(apcs.economics.Point[])}.
+	 */
+
+// FIXME: potentially need to check the curvePoints variable is non-zero in ProdCurve
+
+/**
+	 * Test method for {@link apcs.economics.ProducerCurve#addPointToCurve(apcs.economics.Point, int)}.
+	 */
+
+//assertTrue("Added a point.", testProducerCurve.addPointToCurve(p1, 0));
+// TODO
+
+/**
+	 * Test method for {@link apcs.economics.ProducerCurve#copyCurve(apcs.economics.Point[])}.
+	 */
+
+/**
+	 * Test method for {@link apcs.economics.ProducerCurve#deletePointAtBeginningOfCurve(apcs.economics.Point)}.
+	 */
+
+// TODO
+
+/**
+	 * Test method for {@link apcs.economics.ProducerCurve#deletePointAtMiddleOfCurve(int)}.
+	 */
+
+// TODO
+
+/**
+	 * Test method for {@link apcs.economics.ProducerCurve#deletePointAtEndOfCurve(apcs.economics.Point)}.
+	 */
+
+// TODO
+
+/**
+	 * Test method for {@link apcs.economics.ProducerCurve#setPoint(apcs.economics.Point, int)}.
+	 */
+
+//assertTrue(testProducerCurve.getPoint(7).equals(testPoint));
+
+/**
+	 * Test method for {@link apcs.economics.ProducerCurve#isEmpty()}.
+	 */
+
+//assertTrue(testProducerCurve.toString());
 import apcs.economics.Point;
+import apcs.economics.Point;
+import apcs.economics.ProducerCurve;
 import apcs.economics.ProducerCurve;
 
 /**
@@ -56,7 +123,7 @@ public class ProducerCurveTest
 		ProducerCurve testProducerCurve = new ProducerCurve(curvePoints);
 		assertNotNull("ProducerCurve Created.", testProducerCurve);
 		
-		//assertTrue("Added a point.", testProducerCurve.addPointToCurve(p1, 0));
+		assertTrue("Added a point.", testProducerCurve.addPointToCurve(p1, 0));
 		// TODO
 	}
 
@@ -138,6 +205,6 @@ public class ProducerCurveTest
 		ProducerCurve testProducerCurve = new ProducerCurve(curvePoints);
 		
 		
-		//assertTrue(testProducerCurve.toString());
+		assertTrue(testProducerCurve.toString());
 	}
 }

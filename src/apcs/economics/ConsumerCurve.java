@@ -21,7 +21,11 @@ public class ConsumerCurve
 	 * @param curvePoints
 	 */
 	public ConsumerCurve(ArrayList<Point> curvePoints) 
-	{
+	{		
+		for(int x = 0; x < DEFAULT_ARRAY_SIZE; x++)
+		{
+			this.curvePoints.add(new Point(0,0)); 
+		}
 	
 		this.curvePoints = curvePoints;
 	}
@@ -30,19 +34,27 @@ public class ConsumerCurve
 	 * construct a default size of the array with 
 	 * each index contain point
 	 */
+
 	//FIXME make one of the constructor to do the slope of the curve
 	//FIXME make linear curve 0,0 thro 9,9
 	
-	public ConsumerCurve() 
+	public ConsumerCurve()
 	{
-		this.curvePoints = new ArrayList<Point>();
 		
+	}
+
+	public ConsumerCurve(int np, double m, double b, int dx) 
+	{
+		this.curvePoints = new ArrayList<Point>(np);
 		
-		for(int x = 0; x < DEFAULT_ARRAY_SIZE; x++)
+		for (int i = 0; i < np; i++)
 		{
-			this.curvePoints.add(new Point(0,0)); 
+			int x = i * dx;
+			double y = m * x + b;
+			Point tBA = new Point(x,y);
+			this.curvePoints.add(tBA);
 		}
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
@@ -75,7 +87,7 @@ public class ConsumerCurve
 	 *
 	 * @return curvePoints
 	 */
-	public ArrayList<Point> get()
+	public ArrayList<Point> getList()
 	{
 		return curvePoints;
 		

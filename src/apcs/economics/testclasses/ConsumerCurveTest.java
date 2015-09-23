@@ -44,6 +44,7 @@ public class ConsumerCurveTest
 			
 			
 			System.out.println("ADD");
+
 			test2.add(new Point(1, 3.2),  1);
 			System.out.println("List:" + test2.toString());
 			System.out.println("Size:" + test2.size());
@@ -54,6 +55,17 @@ public class ConsumerCurveTest
 			
 			System.out.println("DELETE");
 			test2.remove(1);
+
+			test2.addPointInCurve(new Point(1, 3.2),  1);
+			System.out.println("List:" + test2.toString());
+			System.out.println("Size:" + test2.size());
+			
+			System.out.println("FIND");			
+			System.out.println("search point (1,3.2):" + test2.find(new Point(1, 3.2)));
+			System.out.println("List:" + test2.toString());
+			
+			System.out.println("DELETE");
+			test2.deletePointInCurve(1);
 			System.out.println("Size:" + test2.size());
 			System.out.println("search point (1,3.2):" + test2.find(new Point(1, 3.2)));
 			System.out.println("List:" + test2.toString());
