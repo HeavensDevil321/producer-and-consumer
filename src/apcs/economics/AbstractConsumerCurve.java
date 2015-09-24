@@ -30,8 +30,21 @@ public class AbstractConsumerCurve extends AbstractCurve
 			{
 				if (getList().get(t).getQuantity() > getList().get(t+1).getQuantity())
 				{
-					
+					Point temp = getList().get(t);
+					getList().set(t,getList().get(t+1));
+					getList().set(t + 1,temp);
 				}
+				if (getList().get(t).getQuantity() == getList().get(t + 1).getQuantity())
+				{
+					if (getList().get(t))
+					{
+						
+					}
+					Point temp = getList().get(t);
+					getList().set(t,getList().get(t+1));
+					getList().set(t + 1,temp);
+				}
+				
 			}
 		}
 		
