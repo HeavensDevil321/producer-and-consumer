@@ -213,7 +213,7 @@ public class ProducerCurve
 		{
 			for (int x = 0; x < this.curvePoints.length; x++)
 			{
-				this.curvePoints[x] = Point p  ;
+				this.curvePoints[x] = point;
 			}
 			return true;
 		}
