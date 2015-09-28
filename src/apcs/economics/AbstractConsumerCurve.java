@@ -16,6 +16,12 @@ public class AbstractConsumerCurve extends AbstractCurve
 		super(np, m, b, dx);		
 	}
 	
+	public AbstractConsumerCurve()
+	{
+		super(10, -1, 10, 1);
+	}
+	
+	
 	/**
 	 * sorts the quantity by x then y
 	 */

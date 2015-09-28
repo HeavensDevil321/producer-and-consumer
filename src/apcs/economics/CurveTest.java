@@ -14,9 +14,9 @@ public class CurveTest
 	double b_cons = numberOfPoints*m;
 	int deltax = 10;
 	
-	AbstractCurve proCurve1 = new AbstractProducerCurve(deltax, b_cons, b_cons, deltax); // (0,0) (1,1)...(9,9) default producer (increasing)
+	AbstractCurve proCurve1 = new AbstractProducerCurve(); // (0,0) (1,1)...(9,9) default producer (increasing)
 	AbstractCurve proCurve2 = new AbstractProducerCurve(numberOfPoints,m,b_prod,deltax);   // (0,0) (10,20), (20,40) (30,60)	
-	AbstractCurve conCurve1 = new AbstractConsumerCurve(deltax, b_cons, b_cons, deltax);  // (10,0) (9,1)...(1,9) (decreasing)
+	AbstractCurve conCurve1 = new AbstractConsumerCurve();  // (10,0) (9,1)...(1,9) (decreasing)
 	AbstractCurve conCurve2 = new AbstractConsumerCurve(numberOfPoints,-m,b_cons,deltax); // (40,0) (30,10) (20,20) (10,10)
 
 
@@ -113,7 +113,7 @@ public class CurveTest
 		for (int i=0; i<10; i++)
 		{
 			Point p2 = new Point(i,i);
-			System.out.println(p2+" Contains: "+proCurve1);
+			//System.out.println(p2+" Contains: "+proCurve1);
 			assertTrue(proCurve1.contain(p2));
 		}
 		

@@ -15,6 +15,11 @@ public class AbstractProducerCurve extends AbstractCurve
 	{
 		super(np, m, b, dx);		
 	}
+	
+	public AbstractProducerCurve()
+	{
+		super(10, 1, 0, 1);
+	}
 
 	/**
 	 * sorts the quantity by x then y

@@ -107,4 +107,6 @@ public abstract class AbstractCurve
 		return index;	
 	}
 }
+//TODO fix add to which it has to use the search by x method
+//FIXME fix the naming of the old curves and change the new curve to normal
 
