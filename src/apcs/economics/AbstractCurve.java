@@ -38,14 +38,28 @@ public abstract class AbstractCurve
 	}
 	
 	/**
-	 * adds a point
+	 * adds a point depending on the x of quantity of point
 	 * @param point
 	 * @return
 	 */
 	public boolean add(Point point)
 	{
-		this.curvePoints.add(point);
-		return true;
+
+		boolean temp = false;
+		
+		if(this.searchByX(point) != -1)
+		{
+			this.curvePoints.set(this.searchByX(point), point);
+			
+			temp = true;
+		}
+		if(this.contain(point) == false)
+		{
+			this.curvePoints.add(point);
+			temp = true;
+		}
+		this.sort();
+		return temp;
 	}
 	
 	/**
@@ -95,16 +109,23 @@ public abstract class AbstractCurve
 	 * @param point
 	 * @return
 	 */
-	private int searchByX(Point point, int index)
-	{		
-		for (int x = 0; x < this.curvePoints.size(); x++)
+	private int searchByX(Point point)
+	{	
+		int sameX = -1;
+		
+		if(this.curvePoints.contains(point) == false)
 		{
-			if (this.curvePoints.contains(x));
+			for (int x = 0; x < this.curvePoints.size(); x++)
 			{
-				return index;
+				if(this.curvePoints.get(x).getQuantity() 
+						== point.getQuantity())
+				{
+					sameX = x;
+					x = curvePoints.size();
+				}
 			}
 		}
-		return index;	
+		return sameX;	
 	}
 }
 //TODO fix add to which it has to use the search by x method

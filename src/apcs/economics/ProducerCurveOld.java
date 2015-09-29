@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 //TODO fix the producer curve to the point where it doesn't deal with indexes just uses only points to its specific array slot
 //FIXME take out unneeded methods to the class and fix them to make sense
-public class ProducerCurve 
+public class ProducerCurveOld 
 {
 	private Point[] curvePoints;
 	
@@ -24,7 +24,7 @@ public class ProducerCurve
 	 * Instantiated curvePoints to an array of 10 Points
 	 */
 	//FIXME change one of the constructor to do the slope for producer
-	public ProducerCurve(int np, double m, double b, int dx)
+	public ProducerCurveOld(int np, double m, double b, int dx)
 	{		
 		this.curvePoints = new Point[DEFAULT_ARRAY_SIZE];
 		
@@ -42,7 +42,7 @@ public class ProducerCurve
 	 * from a Point[]
 	 * @param curvePoints
 	 */
-	public ProducerCurve(Point[] curvePoints) 
+	public ProducerCurveOld(Point[] curvePoints) 
 	{
 		
 		this.curvePoints = curvePoints;

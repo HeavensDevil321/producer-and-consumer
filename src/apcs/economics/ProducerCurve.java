@@ -9,14 +9,14 @@ package apcs.economics;
  * Producer Curve that extends to the abstract curve
  * using its methods.
  */
-public class AbstractProducerCurve extends AbstractCurve 
+public class ProducerCurve extends AbstractCurve 
 {
-	public AbstractProducerCurve(int np, double m, double b, int dx) 
+	public ProducerCurve(int np, double m, double b, int dx) 
 	{
 		super(np, m, b, dx);		
 	}
 	
-	public AbstractProducerCurve()
+	public ProducerCurve()
 	{
 		super(10, 1, 0, 1);
 	}

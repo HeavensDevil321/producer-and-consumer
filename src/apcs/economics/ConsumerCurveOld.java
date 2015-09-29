@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * down hill slope
  *
  */
-public class ConsumerCurve 
+public class ConsumerCurveOld 
 {
 	private ArrayList<Point> curvePoints;
 	
@@ -20,7 +20,7 @@ public class ConsumerCurve
 	/**
 	 * @param curvePoints
 	 */
-	public ConsumerCurve(ArrayList<Point> curvePoints) 
+	public ConsumerCurveOld(ArrayList<Point> curvePoints) 
 	{		
 		for(int x = 0; x < DEFAULT_ARRAY_SIZE; x++)
 		{
@@ -37,7 +37,7 @@ public class ConsumerCurve
 
 	//FIXME make one of the constructor to do the slope of the curve
 	//FIXME make linear curve 0,0 thro 9,9
-	public ConsumerCurve(int np, double m, double b, int dx) 
+	public ConsumerCurveOld(int np, double m, double b, int dx) 
 	{
 		this.curvePoints = new ArrayList<Point>(np);
 		

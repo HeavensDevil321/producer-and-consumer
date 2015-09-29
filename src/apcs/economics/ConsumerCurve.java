@@ -9,14 +9,14 @@ package apcs.economics;
  * Consumer Curve that extends to the abstract curve
  * using its methods.
  */
-public class AbstractConsumerCurve extends AbstractCurve
+public class ConsumerCurve extends AbstractCurve
 {	
-	public AbstractConsumerCurve(int np, double m, double b, int dx) 
+	public ConsumerCurve(int np, double m, double b, int dx) 
 	{
 		super(np, m, b, dx);		
 	}
 	
-	public AbstractConsumerCurve()
+	public ConsumerCurve()
 	{
 		super(10, -1, 10, 1);
 	}
