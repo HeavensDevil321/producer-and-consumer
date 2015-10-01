@@ -23,17 +23,20 @@ public class Producer
 	
 	public Point respondToBid(Point point)
 	{
-		point = null;
-				
+		Point conPoint = null;
+						
 		if (producer.contain(point) == true)
 		{
-			return point;
+			
+			
+	
 		}
 		else
 		{
-			
-		}
-		
+			//for(int i = 0; i < procurve.getCurve().size(); i++)
+			//{
+			//		if(procurve.getQuantity(i) ect. ?
+		}		
 		return point;
 	}
 }
