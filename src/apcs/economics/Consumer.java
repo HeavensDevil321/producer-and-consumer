@@ -23,7 +23,7 @@ public class Consumer
 	
 	public Point respondToBid(Point point)
 	{
-		Point proPoint = null;
+		//Point proPoint = null;
 		
 		if (consumer.contain(point) == true)
 		{
@@ -40,7 +40,7 @@ public class Consumer
 			return null;
 		}
 		
-		if (consumer.contain(point))
+		if (consumer.contain(point) == false)
 		{
 			return null;
 		}

@@ -15,8 +15,10 @@ public class Market
 	 */
 	public static void main(String[] args) 
 	{
+		Producer producer = new Producer();
+		Consumer consumer = new Consumer();
 		
-
+		
 	}
 
 }

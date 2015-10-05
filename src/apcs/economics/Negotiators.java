@@ -31,7 +31,8 @@ public class Negotiators
 			return point;
 		}
 		
-		//if (producer.contain(point) > )
+		//if (producer.contain(point) > consumer.contain(point))
+		//return null; same the other way
 		
 		return point;
 	}
