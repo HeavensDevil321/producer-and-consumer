@@ -15,10 +15,15 @@ public class Market
 	 */
 	public static void main(String[] args) 
 	{
-		Producer producer = new Producer();
-		Consumer consumer = new Consumer();
+		Producer pc = new Producer();
+		Consumer cn = new Consumer();
+		Point temp = new Point(5,5);
+		Point temp2 = new Point(1,5);
+		Point temp3 = new Point(4,4);
+		Point temp4 = new Point (4,4);
 		
-		
+		pc.respondToBid(temp2);
+		pc.respondToBid(new Point (0,0));
 	}
 
 }

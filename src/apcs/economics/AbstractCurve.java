@@ -103,6 +103,12 @@ public abstract class AbstractCurve
 	{
 		return this.curvePoints;
 	}
+	
+	public Point getPoint()
+	{
+		sort();
+		return curvePoints.get(0);
+	}
 
 	/**
 	 * searches a point by x
