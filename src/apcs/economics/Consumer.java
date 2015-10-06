@@ -23,30 +23,45 @@ public class Consumer
 	
 	public Point respondToBid(Point point)
 	{
-		//Point proPoint = null;
+		Point p1 = null;
 		
+		int temp = 0;
+						
 		if (consumer.contain(point) == true)
 		{
-			return point;
+			p1 = point;
 		}
-		
-		if (consumer.equals(point) == true)
+		else
 		{
-			return point;
-		}
-		
-		if (consumer.equals(point) != true)
-		{
-			return null;
-		}
-		
-		if (consumer.contain(point) == false)
-		{
-			return null;
-		}
-		
-		
-		
+			for(int i = 0; i < consumer.getList().size(); i++)
+			{
+				
+				if(consumer.getList().get(i).getQuantity() == point.getQuantity())
+				{
+					if (consumer.getList().get(i).getPrice() < point.getPrice())
+					{
+						p1 = point;
+					}
+					else
+					{
+						p1 = consumer.getList().get(i);
+					}
+					if (consumer.getList().get(i).getPrice() > point.getPrice())
+					{
+						p1 = point;
+					}
+				}
+				
+				if (consumer.getList().get(i).getQuantity() < point.getQuantity())
+				{
+					p1 = point;
+				}
+				if (consumer.getList().get(i).getQuantity() > point.getQuantity())
+				{
+					p1 = point;
+				}
+			}
+		}				
 		return point;
 	}
 }

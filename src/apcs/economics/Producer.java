@@ -9,16 +9,16 @@ package apcs.economics;
  */
 public class Producer 
 {
-	private ProducerCurve curvePoints;
+	private ProducerCurve curvePoint;
 	
 	public Producer()
 	{
-		curvePoints = new ProducerCurve();
+		curvePoint = new ProducerCurve();
 	}
 	
 	public Producer(int np, double m, double b, int dx)
 	{
-		curvePoints = new ProducerCurve(np, m, b, dx);
+		curvePoint = new ProducerCurve(np, m, b, dx);
 	}
 	
 	public Point respondToBid(Point point)
@@ -27,24 +27,28 @@ public class Producer
 		
 		int temp = 0;
 						
-		if (curvePoints.contain(point) == true)
+		if (curvePoint.contain(point) == true)
 		{
 			p1 = point;
 		}
 		else
 		{
-			for(int i = 0; i < curvePoints.getList().size(); i++)
+			for(int i = 0; i < curvePoint.getList().size(); i++)
 			{
 				
-				if(curvePoints.getList().get(i).getQuantity() == point.getQuantity())
+				if(curvePoint.getList().get(i).getQuantity() == point.getQuantity())
 				{
-					if (curvePoints.getList().get(i).getPrice() < point.getPrice())
+					if (curvePoint.getList().get(i).getPrice() < point.getPrice())
 					{
 						p1 = point;
 					}
 					else
 					{
-						p1 = curvePoints.getList().
+						p1 = curvePoint.getList().get(i);
+					}
+					if (curvePoint.getList().get(i).getQuantity() > point.getQuantity())
+					{
+						p1 = point;
 					}
 				}
 				
