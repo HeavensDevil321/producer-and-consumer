@@ -41,39 +41,32 @@ public class Producer
 		Point p1 = producer.getPoint();
 		
 		producer.remove(point);
-						
-		//checks if the point is there
-		if (producer.contain(point) == true)
-		{
-			p1 = point;
-		}
-					
-		//below the curve
-		if (point.getPrice() < p1.getPrice())
-		{
-			return null;
-		}
-		//above the curve
-		if (point.getPrice() > p1.getPrice())
-		{
-			return point;
-		}
+			
+		
 		// on the equilibrium
 		if (point.equals(p1))
 		{
+			System.out.println("on 5,5");
 			return point;
 		}
+		
+		//below the curve
+		if (point.getPrice() < p1.getPrice())
+		{
+			System.out.println("below the curve");
+			return null;
+			
+		}
+		
+		//above the curve
+		if (point.getPrice() > p1.getPrice())
+		{
+			System.out.println("above the curve");
+			return point;
+		}
+		
+		
+		
 		return point;
 	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() 
-	{
-		return "(" + producer + ")";
-	}
-	
-	
 }

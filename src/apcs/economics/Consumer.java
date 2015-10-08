@@ -51,28 +51,21 @@ public class Consumer
 		//below the curve
 		if (point.getPrice() < p1.getPrice())
 		{
+			System.out.println("below curve");
 			return point;
 		}
 		//above the curve
 		if (point.getPrice() > p1.getPrice())
 		{
+			System.out.println("above curve");
 			return null;
 		}
 		// on the equilibrium
 		if (point.equals(p1))
 		{
+			System.out.println("at 5,5");
 			return point;
 		}
 		return point;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() 
-	{
-		return "(" + consumer + ")";
-	}
-	
+	}	
 }
