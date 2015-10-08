@@ -47,62 +47,33 @@ public class Producer
 		{
 			p1 = point;
 		}
-		else
+					
+		//below the curve
+		if (point.getPrice() < p1.getPrice())
 		{
-//			for(int i = 0; i < producer.getList().size(); i++)
-//			{
-//				// if the points are equal to the quantity then check price
-//				if(producer.getList().get(i).getQuantity() == point.getQuantity())
-//				{
-//					if (point.getPrice() < producer.getList().get(i).getPrice())
-//					{
-//						p1 = point;
-//					}
-//					else
-//					{
-//						p1 = producer.getList().get(i);
-//					}
-//					if (producer.getList().get(i).getPrice() > point.getPrice())
-//					{
-//						p1 = point;
-//					}
-//				}
-//				
-//				if (p1.getQuantity() < point.getQuantity())
-//				{
-//					p1 = point;
-//				}
-//				if (producer.getList().get(i).getQuantity() > point.getQuantity())
-//				{
-//					p1 = point;
-//				}
-//
-//				if (point.equals(p1))
-//				{
-//					return point;
-//				}
-//				
-//				
-//			}
-			
-			
-			//below the curve
-			if (point.getPrice() < p1.getPrice())
-			{
-				return null;
-			}
-			//above the curve
-			if (point.getPrice() > p1.getPrice())
-			{
-				return point;
-			}
-			// on the equalibrium
-			if (point.equals(p1))
-			{
-				return point;
-			}
-			
-		}		
+			return null;
+		}
+		//above the curve
+		if (point.getPrice() > p1.getPrice())
+		{
+			return point;
+		}
+		// on the equilibrium
+		if (point.equals(p1))
+		{
+			return point;
+		}
 		return point;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() 
+	{
+		return "(" + producer + ")";
+	}
+	
+	
 }

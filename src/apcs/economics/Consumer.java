@@ -39,43 +39,40 @@ public class Consumer
 	 */
 	public Point respondToBid(Point point)
 	{
-		Point p1 = null;
+		Point p1 = consumer.getPoint();
+		
+		consumer.remove(point);
 		
 		if (consumer.contain(point) == true)
 		{
 			p1 = point;
 		}
-		else
+			
+		//below the curve
+		if (point.getPrice() < p1.getPrice())
 		{
-			for(int i = 0; i < consumer.getList().size(); i++)
-			{
-				
-				if(consumer.getList().get(i).getQuantity() == point.getQuantity())
-				{
-					if (consumer.getList().get(i).getPrice() < point.getPrice())
-					{
-						p1 = point;
-					}
-					else
-					{
-						p1 = consumer.getList().get(i);
-					}
-					if (consumer.getList().get(i).getPrice() > point.getPrice())
-					{
-						p1 = point;
-					}
-				}
-				
-				if (consumer.getList().get(i).getQuantity() < point.getQuantity())
-				{
-					p1 = point;
-				}
-				if (consumer.getList().get(i).getQuantity() > point.getQuantity())
-				{
-					p1 = point;
-				}
-			}
-		}				
+			return point;
+		}
+		//above the curve
+		if (point.getPrice() > p1.getPrice())
+		{
+			return null;
+		}
+		// on the equilibrium
+		if (point.equals(p1))
+		{
+			return point;
+		}
 		return point;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() 
+	{
+		return "(" + consumer + ")";
+	}
+	
 }
