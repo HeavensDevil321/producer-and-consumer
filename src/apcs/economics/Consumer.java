@@ -32,6 +32,8 @@ public class Consumer
 		consumer = new ConsumerCurve(np, m, b, dx);
 	}
 	
+	
+	
 	/**
 	 * this is the response of the consumer to the bid
 	 * @param point
@@ -43,29 +45,25 @@ public class Consumer
 		
 		consumer.remove(point);
 		
-		if (consumer.contain(point) == true)
-		{
-			p1 = point;
-		}
-			
-		//below the curve
-		if (point.getPrice() < p1.getPrice())
-		{
-			System.out.println("below curve");
-			return point;
-		}
-		//above the curve
-		if (point.getPrice() > p1.getPrice())
-		{
-			System.out.println("above curve");
-			return null;
-		}
 		// on the equilibrium
 		if (point.equals(p1))
 		{
 			System.out.println("at 5,5");
 			return point;
 		}
+		//below the curve
+		else if (point.getPrice() < p1.getPrice())
+		{
+			System.out.println("below curve");
+			return point;
+		}	
+		//above the curve
+		else if (point.getPrice() > p1.getPrice())
+		{
+			System.out.println("above curve");
+			return null;
+		}
+		
 		return point;
 	}	
 }

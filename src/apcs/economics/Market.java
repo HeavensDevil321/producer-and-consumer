@@ -17,6 +17,9 @@ public class Market
 	{
 		Producer pc = new Producer();
 		Consumer cn = new Consumer();
+		
+		
+		
 		Point temp = new Point(5,5);
 		Point temp2 = new Point(1,5);
 		Point temp3 = new Point(4,4);
@@ -26,21 +29,19 @@ public class Market
 		System.out.println("Producer responding to the bid:");
 		
 //		pc.respondToBid(new Point (0,0));
-//		pc.respondToBid(new Point (0,0));
-		pc.respondToBid(temp2);
-//		pc.respondToBid(new Point (0,0));
-//		pc.respondToBid(new Point (0,0));
-		pc.respondToBid(temp);
-//		pc.respondToBid(new Point (0,0));
-//		pc.respondToBid(new Point (0,0));
-		pc.respondToBid(temp3);
-//		pc.respondToBid(new Point (0,0));
-//		pc.respondToBid(new Point (0,0));
-		pc.respondToBid(temp5);
+
+		pc.respondToBid(temp2); // 1,5
+
+		pc.respondToBid(temp);  // 5,5
+
+		pc.respondToBid(temp3); //4,4
+
+		pc.respondToBid(temp5); //2,1
 		
 		
 		System.out.println("Consumer responding to the bid:");
 		
+		// test if it says above or below on curve or on 5,5
 		cn.respondToBid(temp2);
 		cn.respondToBid(new Point (0,0));
 		cn.respondToBid(new Point (0,0));
@@ -51,6 +52,8 @@ public class Market
 		cn.respondToBid(new Point (0,0));
 		cn.respondToBid(new Point (0,0));
 		cn.respondToBid(temp4);
+		
+
 		
 		
 	}

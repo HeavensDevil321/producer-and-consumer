@@ -141,4 +141,28 @@ public class ConsumerCurveOld
 		return "[" + curvePoints + "]";
 	}	
 }
-//TODO get consumer working 
+
+
+
+//while(!agree)
+//{
+//	if (pc.equals(conPoint) && cn.equals(proPoint))
+//	{
+//		agree = true;
+//	}
+//	
+//	else
+//	{
+//		if (pc.respondToBid(conPoint) 
+//		{
+//			
+//			return conPoint;
+//		}
+//		
+//		if(cn.respondToBid(proPoint))
+//		{
+//			agree = true;
+//		}
+//	}
+//}
+////TODO get consumer working 
